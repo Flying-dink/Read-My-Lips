@@ -65,16 +65,19 @@
 .buttonClass {
   border-radius: 50px;
   background-color: var(--primary-blue);
-  padding: 10px;
+  padding: 10px 30px;
   font-size: 3vw;
 }
 
 .buttonClass:hover {
   background-color: var(--primary-blue2)
 }
-h1 {
+
+/* Times Up css Begin*/
+h3 {
   color: #1D9Bf0 !important;
 }
- .btn {
+.btn {
    background-color:#1D9Bf0;
- }
+}
+/* Times up css end*/

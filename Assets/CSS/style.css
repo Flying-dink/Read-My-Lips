@@ -1,5 +1,76 @@
+:root {
+  --primary-blue: rgba(23, 120, 245, 1);
+  --primary-blue2: rgba(23, 120, 245, .75);
+  --facebook-blue: rgba(24, 119, 242, 1);
+  --twitter-blue: rgba(29, 155, 240, 1);
+  --white: #FFFFFF;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0;
+  color: var(--white);
+}
+
+.margin-fix {
+  margin: 0px;
+}
+
+.header {
+  text-align: center;
+  font-size: xx-large;
+  margin: 1% 0;
+  background-color: var(--white);
+  color: black;
+}
+
+.main {
+  margin: 1% 0;
+  width: 100%;
+  min-width: 200px;
+  align-self: center;
+}
+
+.first-page-el-style {
+  background-color: var(--primary-blue);
+  border-radius: 50px;
+}
+
+.title-container {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 450px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 5vw;
+  color: var(--white);
+}
+
+.rules {
+  width: 95%;
+  margin: auto;
+  padding: 5px;
+  font-size: 3vw;
+}
+
+.white {
+  background-color: #FFFFFF;
+}
+
+.buttonClass {
+  border-radius: 50px;
+  background-color: var(--primary-blue);
+  padding: 10px;
+  font-size: 3vw;
+}
+
+.buttonClass:hover {
+  background-color: var(--primary-blue2)
 }
 h1 {
   color: #1D9Bf0 !important;

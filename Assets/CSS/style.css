@@ -72,3 +72,9 @@
 .buttonClass:hover {
   background-color: var(--primary-blue2)
 }
+h1 {
+  color: #1D9Bf0 !important;
+}
+ .btn {
+   background-color:#1D9Bf0;
+ }

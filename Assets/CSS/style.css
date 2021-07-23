@@ -17,6 +17,7 @@
 .center-text {
   text-align: center !important;
   padding-top: 20px;
+  color: white;
 }
 
 .hover:hover {

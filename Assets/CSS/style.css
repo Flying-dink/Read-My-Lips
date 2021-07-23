@@ -82,7 +82,9 @@ img {
 }
 .newcolor {
   background-color: rgba(24, 119, 242, 1)!important;
+  margin-right: 20px;
 }
 .newcolor2 {
   background-color: rgba(29, 155, 240, 1)!important;
+  margin-left: 20px;
 }

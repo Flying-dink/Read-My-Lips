@@ -1,11 +1,5 @@
+<<<<<<< game-page
 
-
-.header {
-    font-size: 3rem;
-    font-weight: 900;
-    text-align: center;
-    margin: 1% 0;
-}
 
 p {
     text-align: center;
@@ -31,3 +25,34 @@ p {
     color: white;
     border-radius: 50px;
 }
+
+:root {
+  --primary-blue: rgba(23, 120, 245, 1);
+  --primary-blue2: rgba(23, 120, 245, .75);
+  --facebook-blue: rgba(24, 119, 242, 1);
+  --twitter-blue: rgba(29, 155, 240, 1);
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0;
+  color: var(--white);
+}
+
+.margin-fix {
+  margin: 0px;
+}
+
+.header {
+  text-align: center;
+  font-size: xx-large;
+  margin: 1% 0;
+  background-color: var(--white);
+  color: black;
+}
+
+.main {
+  margin: 1% 0;
+  width: 100%;

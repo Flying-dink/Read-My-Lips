@@ -46,7 +46,7 @@
   margin-bottom: 20px;
 }
 
-.title {
+.titles {
   font-size: 5vw;
   color: var(--white);
 }
@@ -106,3 +106,90 @@ p {
     background-color: cornflowerblue;
 }
 /* game-page styles end */
+/* choose styles begin*/
+.social-pic {
+  margin: auto !important;
+  width: 35% !important;
+  height: 77% !important;
+}
+
+.twitter-pic {
+  margin: auto !important;
+  width: 37% !important;
+  height: 72% !important;
+}
+
+.center-text {
+  text-align: center !important;
+  padding-top: 20px;
+  color: white;
+}
+
+.hover:hover {
+  transform: scale(1.05);
+}
+
+.hover {
+  transition: transform .2s;
+} 
+
+
+.tile-margin {
+  margin: 6% !important
+}
+
+.block {
+  display: block !important;
+}
+
+.maxheight {
+  height: 100% !important;
+}
+
+.top-container {
+  height:500px !important;
+   width: 43%!important
+}
+
+.circle {
+  border: 3px solid white;
+  height: 80px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 80px;
+  position: relative;
+}
+
+.cardContainer {
+  height: 500px !important;
+  margin: 6% !important;
+}
+
+.tile {
+  border-radius: 10%;
+
+}
+.tile1 {
+  background-color: blue;
+}
+.img {
+  border:3px solid white;    
+  height:100px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  width:100px;
+  position: relative;
+}
+
+.newcolor {
+  background-color: rgba(24, 119, 242, 1)!important;
+  margin-right: 20px;
+}
+
+.newcolor2 {
+  background-color: rgba(29, 155, 240, 1)!important;
+  margin-left: 20px;
+}
+/* choose styles end */

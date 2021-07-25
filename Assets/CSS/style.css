@@ -1,9 +1,44 @@
 * {
   box-sizing: border-box;
 }
-h1 {
-  color: #1D9Bf0 !important;
+h3 {
+  color: #1d9bf0;
+  font-weight: bold ;
 }
- .btn {
-   background-color:#1D9Bf0;
- }
+h1 {
+  color: #1d9bf0;
+  
+  
+
+}
+hr{
+  display: block;
+  width: 60%;
+  height: 8px;
+  background-color: #1d9bf0;
+  margin:auto
+
+}
+.scorebox {
+  color: #1d9bf0;
+  position: absolute;
+  
+  right:80% ;
+  left:20%;
+}
+.score {
+  color: #1d9bf0;
+  position: relative;
+  right: 30%;
+  left: 70%;
+}
+
+
+
+
+.names {
+  position: absolute;
+  font-weight: bold;
+  right: 70%;
+  left:20% ;
+

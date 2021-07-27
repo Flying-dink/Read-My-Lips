@@ -74,7 +74,7 @@
 }
 
 /* Times Up css Begin*/
-h3 {
+.timesUp {
   color: #1D9Bf0 !important;
 }
 
@@ -85,22 +85,22 @@ h3 {
 
 /* game-page styles begin */
 
-p {
+.psps {
     text-align: center;
 }
 
 .box {
-    border: 5px solid blue;
-    align-items: center;
-    text-align: center;
-    border-radius: 20px;
+  border: 5px solid blue;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
 }
 
 .gameButton {
-    width: 100%;
-    background-color: blue;
-    color: white;
-    border-radius: 50px;
+  width: 100%;
+  background-color: blue;
+  color: white;
+  border-radius: 50px;
 }
 
 .button:hover {
@@ -127,13 +127,15 @@ p {
   color: white;
 }
 
+.hover {
+  transition: transform .2s;
+} 
+
 .hover:hover {
   transform: scale(1.05);
 }
 
-.hover {
-  transition: transform .2s;
-} 
+
 
 .tile-margin {
   margin: 6% !important
@@ -234,6 +236,15 @@ hr {
   font-weight: bold;
   right: 70%;
   left:20% ;
-
 }
+
+.bText {
+  color: black;
+}
+
 /* highscore styles end */
+
+
+.hide {
+  display: none !important;
+}

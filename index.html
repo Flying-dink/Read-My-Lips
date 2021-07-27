@@ -23,9 +23,9 @@
       <div class="column title-container is-8 margin-fix">
         <div class="columns is-mobile title-container first-page-el-style margin-fix">
           <div class="column is-7 margin-fix">
-            <h1 class="  title">Read My Lips</h1>
+            <h1 class="titles">Read My Lips</h1>
           </div>
-          <div class="column  is-3 title-img margin-fix">
+          <div class="column is-3 title-img margin-fix">
             <img src="Assets/images/mouth-312558_1280.png" alt="mouth with tounge sticking out">
           </div>
         </div>
@@ -44,16 +44,16 @@
         <!--Front page elements End-->
 
         <!--Choose posts-->
-        <div class="tile is-ancestor cardContainer">
-          <div class="tile hover is-vertical is-6">
-              <div class="tile newcolor">
-                  <div class="tile  is-parent is-vertical">
+        <div class="tile is-ancestor cardContainer hide">
+          <div class="tile hover is-vertical is-6 ">
+              <div class="tile newcolor hide">
+                  <div class="tile is-parent is-vertical">
                       <article class="tile is-child">
                           <figure class="image is-2by1">
                               <img class=" img social-pic"
                                   src="./Assets/Images/f_logo_RGB-White_250.png"/>
                           </figure>
-                          <p class="center-text " style='margin-top: 30%;'>Use random posts <br>
+                          <p class="center-text" style='margin-top: 30%;'>Use random posts <br>
                               from facebook!!</p>
                           <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
                       </article>
@@ -79,35 +79,34 @@
       <!-- Chose Posts end-->
         
         <!-- game-page -->
-        <div class="box border column margin-fix">
-                <p class="title titles">
-                    "this is a test question"
-                </p>
-                <p class="subtitle">
-                    John Do
-                </p>
-        <div class="columns margin-fix">
+        <div class="box border column margin-fix hide">
+            <p class="title titles psps">
+                "this is a test question"
+            </p>
+            <p class="subtitle psps">
+                John Do
+            </p>
+          <div class="columns margin-fix">
             <div class="column margin-fix"><a class="button gameButton is-large fas fa-check"></a></div>
             <div class="column margin-fix"><a class="button gameButton is-large fas fa-forward"></a></div>
-        </div>
+          </div>
         </div>
         <!-- game-page  -->
 
         <!-- Times up elements begin -->
-        <div class= "has-text-centered">
-
-          <div class= "content is primary  is-size-4">
-            <h3>Time's Up!</h3>
+        <div class= "has-text-centered hide">
+          <div class= "content is primary is-size-4 ">
+            <h3 class="timesUp">Time's Up!</h3>
             </h1>
           </div>
-            <div class = "content text-is-size-6">
+          <div class = "content text-is-size-6 ">
               <h4>Your Final Score is:</h4>
-            <div>
+            <div class="">
                 <label for="your score"></label>
             </div>
             <div>
               <h4>Enter Initals:</h4>
-            </div>
+            </div class="">
               <label for="your initals"></label>
               <input for="letters"placeholder="Initals" id="initals"name="initals"class="form-input"/>
             </div>
@@ -115,39 +114,37 @@
             <div class="container">
               <button class="button is primary btn  is-rounded is-hovered ">Submit</button>
             </div>
+          </div>
         </div>
         <!--Times up elements end-->
-      </div>
     </div>  
 
     <!--The Real Body End-->
-    <div class="column"></div>
-
+    <div class="column"></div>    
+  </main>
+  <!--HighScore Elements Begin-->
+  <div class="hide">
     <div class="has-text-weight-bold">
-       <h3 class="backToStart"> &lt; Back to Start</h3>
+      <h3 class="backToStart"> &lt; Back to Start</h3>
     </div>
     <div class = "has-text-centered is-size-1">
-       <h4 class="highScoreTitle">High Scores</h1>
+      <h4 class="highScoreTitle">High Scores</h1>
     </div>
     <div class="scorebox is-size-3">
-
-    <p>Name</p>
-    
-   </div>
-   <div class= "score is-size-3">
-    
-       <p>Score</p>
+      <p>Name</p>
+    </div>
+    <div class= "score is-size-3">
+      <p>Score</p>
     </div>
     <hr>
-    <div class="names is-size-4 ">
-    <p>Cat</p>
-    <p>Ralph</p>
-    <p>Antonio</p>
-    <p>Joe</p>
-    </div>    
-        
-      
-  </main>
+    <ul class="names is-size-4">
+      <li class="bText">Cat</li>
+      <li class="bText">Ralph</li>
+      <li class="bText">Antonio</li>
+      <li class="bText">Joe</li>
+    </ul>
+  </div> 
+  <!--HighScore Elements End-->
 </body>
 
 </html>

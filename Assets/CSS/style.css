@@ -74,9 +74,10 @@
 }
 
 /* Times Up css Begin*/
-h3 {
+.timesUp {
   color: #1D9Bf0 !important;
 }
+
 .btn {
    background-color:#1D9Bf0;
 }
@@ -84,28 +85,29 @@ h3 {
 
 /* game-page styles begin */
 
-p {
+.psps {
     text-align: center;
 }
 
 .box {
-    border: 5px solid blue;
-    align-items: center;
-    text-align: center;
-    border-radius: 20px;
+  border: 5px solid blue;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
 }
 
 .gameButton {
-    width: 100%;
-    background-color: blue;
-    color: white;
-    border-radius: 50px;
+  width: 100%;
+  background-color: blue;
+  color: white;
+  border-radius: 50px;
 }
 
 .button:hover {
     background-color: cornflowerblue;
 }
 /* game-page styles end */
+
 /* choose styles begin*/
 .social-pic {
   margin: auto !important;
@@ -125,13 +127,14 @@ p {
   color: white;
 }
 
+.hover {
+  transition: transform .2s;
+} 
+
 .hover:hover {
   transform: scale(1.05);
 }
 
-.hover {
-  transition: transform .2s;
-} 
 
 
 .tile-margin {
@@ -168,11 +171,12 @@ p {
 
 .tile {
   border-radius: 10%;
-
 }
+
 .tile1 {
   background-color: blue;
 }
+
 .img {
   border:3px solid white;    
   height:100px;
@@ -193,3 +197,54 @@ p {
   margin-left: 20px;
 }
 /* choose styles end */
+
+/* highscore styles start */
+.backToStart {
+  color: #1d9bf0;
+  font-weight: bold ;
+}
+
+.highScoreTitle {
+  color: #1d9bf0;
+}
+
+hr {
+  display: block;
+  width: 60%;
+  height: 8px;
+  background-color: #1d9bf0;
+  margin:auto
+}
+
+.scorebox {
+  color: #1d9bf0;
+  position: absolute;
+  
+  right:80% ;
+  left:20%;
+}
+
+.score {
+  color: #1d9bf0;
+  position: relative;
+  right: 30%;
+  left: 70%;
+}
+
+.names {
+  position: absolute;
+  font-weight: bold;
+  right: 70%;
+  left:20% ;
+}
+
+.bText {
+  color: black;
+}
+
+/* highscore styles end */
+
+
+.hide {
+  display: none !important;
+}

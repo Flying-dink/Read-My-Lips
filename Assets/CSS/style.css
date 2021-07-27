@@ -1,3 +1,250 @@
+:root {
+  --primary-blue: rgba(23, 120, 245, 1);
+  --primary-blue2: rgba(23, 120, 245, .75);
+  --facebook-blue: rgba(24, 119, 242, 1);
+  --twitter-blue: rgba(29, 155, 240, 1);
+  --white: #FFFFFF;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0;
+  color: var(--white);
+}
+
+.margin-fix {
+  margin: 0px;
+}
+
+.header {
+  text-align: center;
+  font-size: xx-large;
+  margin: 1% 0;
+  background-color: var(--white);
+  color: black;
+}
+
+.main {
+  margin: 1% 0;
+  width: 100%;
+  min-width: 200px;
+  align-self: center;
+}
+
+.first-page-el-style {
+  background-color: var(--primary-blue);
+  border-radius: 50px;
+}
+
+.title-container {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 450px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titles {
+  font-size: 5vw;
+  color: var(--white);
+}
+
+.rules {
+  width: 95%;
+  margin: auto;
+  padding: 5px;
+  font-size: 3vw;
+}
+
+.white {
+  background-color: #FFFFFF;
+}
+
+.buttonClass {
+  border-radius: 50px;
+  background-color: var(--primary-blue);
+  padding: 10px 30px;
+  font-size: 3vw;
+}
+
+.buttonClass:hover {
+  background-color: var(--primary-blue2)
+}
+
+/* Times Up css Begin*/
+.timesUp {
+  color: #1D9Bf0 !important;
+}
+
+.btn {
+   background-color:#1D9Bf0;
+}
+/* Times up css end*/
+
+/* game-page styles begin */
+
+.psps {
+    text-align: center;
+}
+
+.box {
+  border: 5px solid blue;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.gameButton {
+  width: 100%;
+  background-color: blue;
+  color: white;
+  border-radius: 50px;
+}
+
+.button:hover {
+    background-color: cornflowerblue;
+}
+/* game-page styles end */
+
+/* choose styles begin*/
+.social-pic {
+  margin: auto !important;
+  width: 35% !important;
+  height: 77% !important;
+}
+
+.twitter-pic {
+  margin: auto !important;
+  width: 37% !important;
+  height: 72% !important;
+}
+
+.center-text {
+  text-align: center !important;
+  padding-top: 20px;
+  color: white;
+}
+
+.hover {
+  transition: transform .2s;
+} 
+
+.hover:hover {
+  transform: scale(1.05);
+}
+
+
+
+.tile-margin {
+  margin: 6% !important
+}
+
+.block {
+  display: block !important;
+}
+
+.maxheight {
+  height: 100% !important;
+}
+
+.top-container {
+  height:500px !important;
+   width: 43%!important
+}
+
+.circle {
+  border: 3px solid white;
+  height: 80px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 80px;
+  position: relative;
+}
+
+.cardContainer {
+  height: 500px !important;
+  margin: 6% !important;
+}
+
+.tile {
+  border-radius: 10%;
+}
+
+.tile1 {
+  background-color: blue;
+}
+
+.img {
+  border:3px solid white;    
+  height:100px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  width:100px;
+  position: relative;
+}
+
+.newcolor {
+  background-color: rgba(24, 119, 242, 1)!important;
+  margin-right: 20px;
+}
+
+.newcolor2 {
+  background-color: rgba(29, 155, 240, 1)!important;
+  margin-left: 20px;
+}
+/* choose styles end */
+
+/* highscore styles start */
+.backToStart {
+  color: #1d9bf0;
+  font-weight: bold ;
+}
+
+.highScoreTitle {
+  color: #1d9bf0;
+}
+
+hr {
+  display: block;
+  width: 60%;
+  height: 8px;
+  background-color: #1d9bf0;
+  margin:auto
+}
+
+.scorebox {
+  color: #1d9bf0;
+  position: absolute;
+  
+  right:80% ;
+  left:20%;
+}
+
+.score {
+  color: #1d9bf0;
+  position: relative;
+  right: 30%;
+  left: 70%;
+}
+
+.names {
+  position: absolute;
+  font-weight: bold;
+  right: 70%;
+  left:20% ;
+}
+
+.bText {
+  color: black;
+}
+
+/* highscore styles end */
+
+
+.hide {
+  display: none !important;
 }

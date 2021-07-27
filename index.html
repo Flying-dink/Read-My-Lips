@@ -13,12 +13,121 @@
   
 <body>
 
+  <header>
+    <div class="header hide">timer: 90</div> 
+  </header>
+  <main class="columns is-mobile main margin-fix">
+    <div class="column"></div>
+    <!--the real body-->
+      <!--Front page Elements begin-->
+      <div class="column title-container is-8 margin-fix">
+        <div class="columns is-mobile title-container first-page-el-style margin-fix">
+          <div class="column is-7 margin-fix">
+            <h1 class="  title">Read My Lips</h1>
+          </div>
+          <div class="column  is-3 title-img margin-fix">
+            <img src="Assets/images/mouth-312558_1280.png" alt="mouth with tounge sticking out">
+          </div>
+        </div>
+        <div class=" title-container first-page-el-style margin-fix margin-fix">
+          <div class="rules">
+            <h2 class="rules">The Party Game of Unspoken Words!</h2>
+
+            <p class="rules">Read each post without making a sound while your friends take turns reading your lips and guessing what the post says.</p>
+
+            <p class="rules">Whoever guesses the most phrases correctly before time runs out wins!</p>
+          </div>
+        </div>
+        <div class="buttonContainer margin-fix">
+          <button type="button" class="buttonClass">Click To Begin</button>
+        </div>
+        <!--Front page elements End-->
+
+        <!--Choose posts-->
+        <div class="tile is-ancestor cardContainer">
+          <div class="tile hover is-vertical is-6">
+              <div class="tile newcolor">
+                  <div class="tile  is-parent is-vertical">
+                      <article class="tile is-child">
+                          <figure class="image is-2by1">
+                              <img class=" img social-pic"
+                                  src="./Assets/Images/f_logo_RGB-White_250.png"/>
+                          </figure>
+                          <p class="center-text " style='margin-top: 30%;'>Use random posts <br>
+                              from facebook!!</p>
+                          <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
+                      </article>
+                  </div>
+              </div>
+          </div>
+          <div class="tile hover is-vertical is-6">
+              <div class="tile newcolor2">
+                  <div class="tile is-parent is-vertical">
+                      <article class="tile is-child">
+                          <figure class="image is-2by1">
+                              <img class="img twitter-pic"
+                                  src="./Assets/Images/Logo white.svg"/>
+                          </figure>
+                          <p class="center-text" style='margin-top: 30%;'>Use random tweets <br>
+                              from facebook!!</p>
+                          <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
+                      </article>
+                  </div>
+              </div>
+          </div>
+        </div>
+      <!-- Chose Posts end-->
         
-    <div class= "has-text-weight-bold">
-       <h3> &lt; Back to Start</h3>
+        <!-- game-page -->
+        <div class="box border column margin-fix">
+                <p class="title titles">
+                    "this is a test question"
+                </p>
+                <p class="subtitle">
+                    John Do
+                </p>
+        <div class="columns margin-fix">
+            <div class="column margin-fix"><a class="button gameButton is-large fas fa-check"></a></div>
+            <div class="column margin-fix"><a class="button gameButton is-large fas fa-forward"></a></div>
+        </div>
+        </div>
+        <!-- game-page  -->
+
+        <!-- Times up elements begin -->
+        <div class= "has-text-centered">
+
+          <div class= "content is primary  is-size-4">
+            <h3>Time's Up!</h3>
+            </h1>
+          </div>
+            <div class = "content text-is-size-6">
+              <h4>Your Final Score is:</h4>
+            <div>
+                <label for="your score"></label>
+            </div>
+            <div>
+              <h4>Enter Initals:</h4>
+            </div>
+              <label for="your initals"></label>
+              <input for="letters"placeholder="Initals" id="initals"name="initals"class="form-input"/>
+            </div>
+    
+            <div class="container">
+              <button class="button is primary btn  is-rounded is-hovered ">Submit</button>
+            </div>
+        </div>
+        <!--Times up elements end-->
+      </div>
+    </div>  
+
+    <!--The Real Body End-->
+    <div class="column"></div>
+
+    <div class="has-text-weight-bold">
+       <h3 class="backToStart"> &lt; Back to Start</h3>
     </div>
     <div class = "has-text-centered is-size-1">
-       <h1>High Scores</h1>
+       <h4 class="highScoreTitle">High Scores</h1>
     </div>
     <div class="scorebox is-size-3">
 
@@ -37,9 +146,8 @@
     <p>Joe</p>
     </div>    
         
-    
-    
-    
+      
+  </main>
 </body>
 
 </html>

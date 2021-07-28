@@ -46,54 +46,55 @@
                 </div>
             </div>
             <!--Front page elements End-->
-
-            <!--Choose posts-->
-            <div class="tile is-ancestor cardContainer hide">
-                <div class="tile hover is-vertical is-6 " id="facebook">
-                    <div class="tile newcolor">
-                        <div class="tile is-parent is-vertical">
-                            <article class="tile is-child">
-                                <figure class="image is-2by1">
-                                    <img class=" img social-pic" src="./Assets/Images/f_logo_RGB-White_250.png" />
-                                </figure>
-                                <p class="center-text" style='margin-top: 30%;'>Use random posts <br>
-                                    from facebook!!</p>
-                                <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-                <div class="tile hover is-vertical is-6" id="twitter">
-                    <div class="tile newcolor2">
-                        <div class="tile is-parent is-vertical">
-                            <article class="tile is-child">
-                                <figure class="image is-2by1">
-                                    <img class="img twitter-pic" src="./Assets/Images/Logo white.svg" />
-                                </figure>
-                                <p class="center-text" style='margin-top: 30%;'>Use random tweets <br>
-                                    from facebook!!</p>
-                                <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Chose Posts end-->
-
-            <!-- game-page -->
-            <div class="box border column margin-fix hide">
-                <p class="title titles psps">
-                    "this is a test question"
-                </p>
-                <p class="subtitle psps">
-                    John Do
-                </p>
-                <div class="columns margin-fix">
-                    <div class="column margin-fix"><a class="button gameButton is-large fas fa-check"></a></div>
-                    <div class="column margin-fix"><a class="button gameButton is-large fas fa-forward"></a></div>
-                </div>
-            </div>
-            <!-- game-page  -->
+        <!--Choose posts-->
+        <div class="tile is-ancestor cardContainer hide" id="jokeParentEl">
+          <div class="tile hover is-vertical is-6" id= "getJoke">
+              <div class="tile newcolor">
+                  <div class="tile is-parent is-vertical">
+                      <article class="tile is-child">
+                          <figure class="image is-2by1">
+                              <img class=" img social-pic"
+                                  src="./Assets/Images/f_logo_RGB-White_250.png"/>
+                          </figure>
+                          <p class="center-text" style='margin-top: 30%;'>Use random posts <br>
+                              from facebook!!</p>
+                          <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
+                      </article>
+                  </div>
+              </div>
+          </div>
+          <div class="tile hover is-vertical is-6">
+              <div class="tile newcolor2">
+                  <div class="tile is-parent is-vertical">
+                      <article class="tile is-child">
+                          <figure class="image is-2by1">
+                              <img class="img twitter-pic"
+                                  src="./Assets/Images/Logo white.svg"/>
+                          </figure>
+                          <p class="center-text" style='margin-top: 30%;'>Use random tweets <br>
+                              from facebook!!</p>
+                          <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
+                      </article>
+                  </div>
+              </div>
+          </div>
+        </div>
+      <!-- Chose Posts end-->
+        
+        <!-- game-page -->
+        <div class="box border column margin-fix hide" id="gamePageParEl">
+            <p class="title titles psps" id="question" >
+                "this is a test question"
+            </p>
+            <p class="subtitle psps" id="answer">
+                John Do
+            </p>
+          <div class="columns margin-fix">
+            <div class="column margin-fix"><a class="button gameButton is-large fas fa-check" id="correctbutton"></a></div>
+            <div class="column margin-fix"><a class="button gameButton is-large fas fa-forward" id="wrongbutton"></a></div>
+          </div>
+        </div>
+        <!-- game-page  -->
 
             <!-- Times up elements begin -->
             <div class="has-text-centered hide">

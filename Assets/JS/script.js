@@ -15,7 +15,7 @@ var startGame = function() {
     $('.cardContainer').removeClass('hide')
     $('#instructions').addClass('hide')
     //two event listeners for choosing facebook or twitter path as well as stating the associated funtions below and starting timer
-    $('#facebook').on('click',facebookPath)
+    $('#getJoke').on('click',JokePath)
     $('#twitter').on('click',twitterPath)
     
 };
@@ -53,44 +53,44 @@ var timerCountdown = function() {
 };
     //upon reaching zero go to submitscore function;
     //function to start facebook path that changes page to show facebook posts to be read
-var facebookPath = function() {
+var JokePath = function() {
+    console.log('test');
     //game elements show/other elements hide
+    $('#jokeParentEl').addClass('hide')
+    $('#gamePageParEl').removeClass('hide')
+
     //fetch facebook post loop parse and display per each question
+    var getJokeApi = function() {
+    fetch(
+        'https://official-joke-api.appspot.com/random_joke'
+      )
+        // Converts the response to JSON
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(response) {
+          // YOUR CODE HERE
+           document.getElementById('question').innerHTML = response.setup;
+           document.getElementById('answer').innerHTML =  response.punchline;
+          
+          
+          console.log(response);
+
+        });
+        document.getElementById('correctbutton').addEventListener('click', function(){
+            score++
+            getJokeApi();
+        }); 
+        document.getElementById('wrongbutton').addEventListener('click', function(){
+            getJokeApi();
+        });
+
+    }
+    getJokeApi();
+
+}   
     //local function for correct clicks log correct clicks under score change post displayed
     //local function for correct or skip clicks change post displayed
-    //document.getElementById('getJoke').addEventListener("click", function(){
-        //    fetch(
-        //        'https://official-joke-api.appspot.com/random_joke'
-        //      )
-        //        // Converts the response to JSON
-        //        .then(function(response) {
-        //          return response.json();
-        //        })
-        //        .then(function(response) {
-        //          // YOUR CODE HERE
-        //           document.getElementById('question').innerHTML = response.setup;
-        //           document.getElementById('answer').innerHTML =  response.punchline;         
-        //          
-        //          console.log(response);
-        //        });
-}
-
-//document.getElementById('getJoke').addEventListener("click", function(){
-//    fetch(
-//        'https://official-joke-api.appspot.com/random_joke'
-//      )
-//        // Converts the response to JSON
-//        .then(function(response) {
-//          return response.json();
-//        })
-//        .then(function(response) {
-//          // YOUR CODE HERE
-//           document.getElementById('question').innerHTML = response.setup;
-//           document.getElementById('answer').innerHTML =  response.punchline;         
-//          
-//          console.log(response);
-//        });
-//});
 
     
 //function to start twitter path

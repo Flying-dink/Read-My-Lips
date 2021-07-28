@@ -55,44 +55,6 @@ var timerCountdown = function() {
     //function to start facebook path that changes page to show facebook posts to be read
 var JokePath = function() {
     //game elements show/other elements hide
-<<<<<<< Updated upstream
-    //fetch facebook post loop parse and display per each question
-    //local function for correct clicks log correct clicks under score change post displayed
-    //local function for correct or skip clicks change post displayed
-    //document.getElementById('getJoke').addEventListener("click", function(){
-        //    fetch(
-        //        'https://official-joke-api.appspot.com/random_joke'
-        //      )
-        //        // Converts the response to JSON
-        //        .then(function(response) {
-        //          return response.json();
-        //        })
-        //        .then(function(response) {
-        //          // YOUR CODE HERE
-        //           document.getElementById('question').innerHTML = response.setup;
-        //           document.getElementById('answer').innerHTML =  response.punchline;         
-        //          
-        //          console.log(response);
-        //        });
-}
-
-//document.getElementById('getJoke').addEventListener("click", function(){
-//    fetch(
-//        'https://official-joke-api.appspot.com/random_joke'
-//      )
-//        // Converts the response to JSON
-//        .then(function(response) {
-//          return response.json();
-//        })
-//        .then(function(response) {
-//          // YOUR CODE HERE
-//           document.getElementById('question').innerHTML = response.setup;
-//           document.getElementById('answer').innerHTML =  response.punchline;         
-//          
-//          console.log(response);
-//        });
-//});
-=======
     document.getElementById('jokeParentElement').classlist.add('hide')
     document.getElementById('gamePageParentEl').classlist.remove('hide')
 
@@ -128,7 +90,6 @@ var JokePath = function() {
 }   
     //local function for correct clicks log correct clicks under score change post displayed
     //local function for correct or skip clicks change post displayed
->>>>>>> Stashed changes
 
     
 //function to start twitter path

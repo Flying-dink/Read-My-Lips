@@ -15,7 +15,7 @@ var startGame = function() {
     $('.cardContainer').removeClass('hide')
     $('#instructions').addClass('hide')
     //two event listeners for choosing facebook or twitter path as well as stating the associated funtions below and starting timer
-    $('#facebook').on('click',facebookPath)
+    $('#getJoke').on('click',JokePath)
     $('#twitter').on('click',twitterPath)
     
 };
@@ -54,13 +54,12 @@ var timerCountdown = function() {
     //upon reaching zero go to submitscore function;
     //function to start facebook path that changes page to show facebook posts to be read
 var JokePath = function() {
+    console.log('test');
     //game elements show/other elements hide
-    document.getElementById('jokeParentElement').classlist.add('hide')
-    document.getElementById('gamePageParentEl').classlist.remove('hide')
+    $('#jokeParentEl').addClass('hide')
+    $('#gamePageParEl').removeClass('hide')
 
     //fetch facebook post loop parse and display per each question
-    document.getElementById('getJoke').addEventListener("click", getJokeApi)
-
     var getJokeApi = function() {
     fetch(
         'https://official-joke-api.appspot.com/random_joke'
@@ -87,6 +86,8 @@ var JokePath = function() {
         });
 
     }
+    getJokeApi();
+
 }   
     //local function for correct clicks log correct clicks under score change post displayed
     //local function for correct or skip clicks change post displayed

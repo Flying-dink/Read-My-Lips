@@ -16,7 +16,7 @@ var startGame = function() {
     $('#instructions').addClass('hide')
     //two event listeners for choosing facebook or twitter path as well as stating the associated funtions below and starting timer
     $('#getJoke').on('click',JokePath)
-    $('#twitter').on('click',twitterPath)
+    $('#giphy').on('click',giphyPath)
     
 };
     
@@ -89,6 +89,49 @@ var JokePath = function() {
     getJokeApi();
 
 }   
+
+
+var giphyPath = function() {
+    console.log('test')
+    $('#jokeParentEl').addClass('hide')
+    $('#gamePageParEl').removeClass('hide')
+    
+
+    var getGiphyApi = function() {
+        console.log('joe');
+        fetch('https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN')
+        // Converts the response to JSON
+    
+        .then(function(response) {
+        return response.json();
+        })
+        .then(function(response) {
+    
+        var myImage = document.getElementById('giphyPic');
+        console.log(response);
+            console.log(myImage.src)
+            console.log(response.data.image_url)
+            $('#giphyPic').attr("src",response.data.image_url);
+
+          
+            
+        document.getElementById('question').textContent = "Describe the picture!"
+        })};
+    
+        document.getElementById('correctbutton').addEventListener('click', function(){
+        score++
+            getGiphyApi();
+        });
+    
+        document.getElementById('wrongbutton').addEventListener('click', function(){
+            getGiphyApi();
+        });
+
+        
+
+        getGiphyApi();
+};
+    
     //local function for correct clicks log correct clicks under score change post displayed
     //local function for correct or skip clicks change post displayed
 

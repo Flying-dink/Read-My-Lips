@@ -25,7 +25,8 @@ var facebookPath = function() {
 
 }
 
-document.getElementById('getJoke').addEventListener("click", function(){
+
+var getJoke = function(){
     fetch(
         'https://official-joke-api.appspot.com/random_joke'
       )
@@ -41,7 +42,7 @@ document.getElementById('getJoke').addEventListener("click", function(){
           
           console.log(response);
         });
-});
+};
 
     
 //function to start twitter path
@@ -73,5 +74,5 @@ var backToStart = function() {
     //start page elements show/other elements hide
 }
 
-//startGame button event listener
+getJoke();
 //highscore button event listener

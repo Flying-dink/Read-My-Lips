@@ -95,6 +95,8 @@ var giphyPath = function() {
     console.log('test')
     $('#jokeParentEl').addClass('hide')
     $('#gamePageParEl').removeClass('hide')
+    $('#answer').addClass('hide')
+    $('#giphyPic').removeClass('hide')
     
 
     var getGiphyApi = function() {

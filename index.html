@@ -6,144 +6,149 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read My Lips</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.css" />
     <script src="https://kit.fontawesome.com/e0e53f9924.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-  
+
 <body>
 
-  <header>
-    <div class="header hide">timer: 90</div> 
-  </header>
-  <main class="columns is-mobile main margin-fix">
-    <div class="column"></div>
-    <!--the real body-->
-      <!--Front page Elements begin-->
-      <div class="column title-container is-8 margin-fix">
-        <div class="columns is-mobile title-container first-page-el-style margin-fix">
-          <div class="column is-7 margin-fix">
-            <h1 class="titles">Read My Lips</h1>
-          </div>
-          <div class="column is-3 title-img margin-fix">
-            <img src="Assets/images/mouth-312558_1280.png" alt="mouth with tounge sticking out">
-          </div>
-        </div>
-        <div class=" title-container first-page-el-style margin-fix margin-fix">
-          <div class="rules">
-            <h2 class="rules">The Party Game of Unspoken Words!</h2>
-
-            <p class="rules">Read each post without making a sound while your friends take turns reading your lips and guessing what the post says.</p>
-
-            <p class="rules">Whoever guesses the most phrases correctly before time runs out wins!</p>
-          </div>
-        </div>
-        <div class="buttonContainer margin-fix">
-          <button type="button" class="buttonClass">Click To Begin</button>
-        </div>
-        <!--Front page elements End-->
-
-        <!--Choose posts-->
-        <div class="tile is-ancestor cardContainer hide">
-          <div class="tile hover is-vertical is-6 ">
-              <div class="tile newcolor hide">
-                  <div class="tile is-parent is-vertical">
-                      <article class="tile is-child">
-                          <figure class="image is-2by1">
-                              <img class=" img social-pic"
-                                  src="./Assets/Images/f_logo_RGB-White_250.png"/>
-                          </figure>
-                          <p class="center-text" style='margin-top: 30%;'>Use random posts <br>
-                              from facebook!!</p>
-                          <p class="title center-text circle" id= "getJoke" style="margin: 50% auto 0 auto;">GO!</p>
-                      </article>
-                  </div>
-              </div>
-          </div>
-          <div class="tile hover is-vertical is-6">
-              <div class="tile newcolor2">
-                  <div class="tile is-parent is-vertical">
-                      <article class="tile is-child">
-                          <figure class="image is-2by1">
-                              <img class="img twitter-pic"
-                                  src="./Assets/Images/Logo white.svg"/>
-                          </figure>
-                          <p class="center-text" style='margin-top: 30%;'>Use random tweets <br>
-                              from facebook!!</p>
-                          <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
-                      </article>
-                  </div>
-              </div>
-          </div>
-        </div>
-      <!-- Chose Posts end-->
-        
-        <!-- game-page -->
-        <div class="box border column margin-fix hide">
-            <p class="title titles psps" id="question" >
-                "this is a test question"
-            </p>
-            <p class="subtitle psps" id="answer">
-                John Do
-            </p>
-          <div class="columns margin-fix">
-            <div class="column margin-fix"><a class="button gameButton is-large fas fa-check"></a></div>
-            <div class="column margin-fix"><a class="button gameButton is-large fas fa-forward"></a></div>
-          </div>
-        </div>
-        <!-- game-page  -->
-
-        <!-- Times up elements begin -->
-        <div class= "has-text-centered hide">
-          <div class= "content is primary is-size-4 ">
-            <h3 class="timesUp">Time's Up!</h3>
-          </div>
-          <div class = "content text-is-size-6 ">
-              <h4>Your Final Score is:</h4>
-            <div class="">
-                <label for="your score"></label>
-            </div>
-            <div>
-              <h4>Enter Initals:</h4>
-            </div class="">
-              <label for="your initals"></label>
-              <input for="letters"placeholder="Initals" id="initals"name="initals"class="form-input"/>
-            </div>
+    <header>
+        <div class="header hide">timer: 90</div>
+    </header>
     
-            <div class="container">
-              <button class="button is primary btn  is-rounded is-hovered ">Submit</button>
+    <main class="columns is-mobile main margin-fix">
+        <div class="column"></div>
+        <!--the real body-->
+        <!--Front page Elements begin-->
+        <div class="column title-container is-8 margin-fix">
+            <div id="instructions">
+                <div class="columns is-mobile title-container first-page-el-style margin-fix">
+                    <div class="column is-7 margin-fix">
+                        <h1 class="titles">Read My Lips</h1>
+                    </div>
+                    <div class="column is-3 title-img margin-fix">
+                        <img src="Assets/images/mouth-312558_1280.png" alt="mouth with tounge sticking out">
+                    </div>
+                </div>
+                <div class=" title-container first-page-el-style margin-fix margin-fix">
+                    <div class="rules">
+                        <h2 class="rules">The Party Game of Unspoken Words!</h2>
+
+                        <p class="rules">Read each post without making a sound while your friends take turns reading
+                            your lips and guessing what the post says.</p>
+
+                        <p class="rules">Whoever guesses the most phrases correctly before time runs out wins!</p>
+                    </div>
+                </div>
+                <div class="buttonContainer margin-fix">
+                    <button type="button" class="buttonClass" id="begin-btn">Click To Begin</button>
+                </div>
             </div>
-          </div>
+            <!--Front page elements End-->
+
+            <!--Choose posts-->
+            <div class="tile is-ancestor cardContainer hide">
+                <div class="tile hover is-vertical is-6 " id="facebook">
+                    <div class="tile newcolor">
+                        <div class="tile is-parent is-vertical">
+                            <article class="tile is-child">
+                                <figure class="image is-2by1">
+                                    <img class=" img social-pic" src="./Assets/Images/f_logo_RGB-White_250.png" />
+                                </figure>
+                                <p class="center-text" style='margin-top: 30%;'>Use random posts <br>
+                                    from facebook!!</p>
+                                <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="tile hover is-vertical is-6" id="twitter">
+                    <div class="tile newcolor2">
+                        <div class="tile is-parent is-vertical">
+                            <article class="tile is-child">
+                                <figure class="image is-2by1">
+                                    <img class="img twitter-pic" src="./Assets/Images/Logo white.svg" />
+                                </figure>
+                                <p class="center-text" style='margin-top: 30%;'>Use random tweets <br>
+                                    from facebook!!</p>
+                                <p class="title center-text circle" style="margin: 50% auto 0 auto;">GO!</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chose Posts end-->
+
+            <!-- game-page -->
+            <div class="box border column margin-fix hide">
+                <p class="title titles psps">
+                    "this is a test question"
+                </p>
+                <p class="subtitle psps">
+                    John Do
+                </p>
+                <div class="columns margin-fix">
+                    <div class="column margin-fix"><a class="button gameButton is-large fas fa-check"></a></div>
+                    <div class="column margin-fix"><a class="button gameButton is-large fas fa-forward"></a></div>
+                </div>
+            </div>
+            <!-- game-page  -->
+
+            <!-- Times up elements begin -->
+            <div class="has-text-centered hide">
+                <div class="content is primary is-size-4 ">
+                    <h3 class="timesUp">Time's Up!</h3>
+                </div>
+                <div class="content text-is-size-6 ">
+                    <h4>Your Final Score is:</h4>
+                    <div class="">
+                        <label for="your score"></label>
+                    </div>
+                    <div>
+                        <h4>Enter Initals:</h4>
+                    </div class="">
+                    <label for="your initals"></label>
+                    <input for="letters" placeholder="Initals" id="initals" name="initals" class="form-input" />
+                </div>
+
+                <div class="container">
+                    <button class="button is primary btn  is-rounded is-hovered ">Submit</button>
+                </div>
+            </div>
         </div>
         <!--Times up elements end-->
-    </div>  
+        </div>
 
-    <!--The Real Body End-->
-    <div class="column"></div>    
-  </main>
-  <!--HighScore Elements Begin-->
-  <div class="hide">
-    <div class="has-text-weight-bold">
-      <h5 class="backToStart"> &lt; Back to Start</h3>
+        <!--The Real Body End-->
+        <div class="column"></div>
+    </main>
+    <!--HighScore Elements Begin-->
+    <div class="hide">
+        <div class="has-text-weight-bold">
+            <h5 class="backToStart"> &lt; Back to Start</h3>
+        </div>
+        <div class="has-text-centered is-size-1">
+            <h6 class="highScoreTitle">High Scores</h1>
+        </div>
+        <div class="scorebox is-size-3">
+            <p>Name</p>
+        </div>
+        <div class="score is-size-3">
+            <p>Score</p>
+        </div>
+        <hr>
+        <ul class="names is-size-4">
+            <li class="bText">Cat</li>
+            <li class="bText">Ralph</li>
+            <li class="bText">Antonio</li>
+            <li class="bText">Joe</li>
+        </ul>
     </div>
-    <div class = "has-text-centered is-size-1">
-      <h6 class="highScoreTitle">High Scores</h1>
-    </div>
-    <div class="scorebox is-size-3">
-      <p>Name</p>
-    </div>
-    <div class= "score is-size-3">
-      <p>Score</p>
-    </div>
-    <hr>
-    <ul class="names is-size-4">
-      <li class="bText">Cat</li>
-      <li class="bText">Ralph</li>
-      <li class="bText">Antonio</li>
-      <li class="bText">Joe</li>
-    </ul>
-  </div> 
-  <!--HighScore Elements End-->
+    <!--HighScore Elements End-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./Assets/JS/script.js"></script>
 </body>
-<script src="./Assets/JS/script.js"></script>
+
 </html>

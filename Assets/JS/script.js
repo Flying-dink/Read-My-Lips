@@ -6,24 +6,92 @@ var timeleft = 90;
 
 //function on start game clicked
 var startGame = function() {
+    console.log('shit');
     //reset score to zero
+    score = 0 ;
     //reset time left
+    timeleft = 90;
     //changes page to show choose elements for choose path and hide all others
+    $('.cardContainer').removeClass('hide')
+    $('#instructions').addClass('hide')
     //two event listeners for choosing facebook or twitter path as well as stating the associated funtions below and starting timer
+    $('#getJoke').on('click',JokePath)
+    $('#twitter').on('click',twitterPath)
+    
 };
     
 //timer function coundown to call end game once timer reaches zero and send user to score save
 var timerCountdown = function() {
-    //upon reaching zero go to submitscore function
+     
+        
+     
+        //use the 'setInterval()' to call a function to be executed every 1000 milliseconds
+        var timeInterval = setInterval(function() {
+     
+         console.log(timeleft)
+            //As long as the 'timeleft' is greater than 1
+            if (timeleft > 1) {
+                //Set the 'textContent' of the 'timerEl' to show the remaining seconds
+                timerEl.textContent = timeleft + 'seconds remaining';
+                //Decrement 'timeleft' by 1
+                timeleft--;
+     
+            }else if (timeleft ===1) {
+                //When ttimeleftime left is equal to 1, rename to 'second' instead of seconds
+                timerEl.textContent = timeleft + 'second remaining';
+                timeleft--;
+            } else {
+                //Once 'timeLeft' gets to 0, set 'timerEl' to an empty string
+                timerEl.textContent = '';
+                //Use 'clearInterval()' to stop the timer
+                clearInterval(timeInterval);
+                //Call the 'displayMessage() function
+                displayMessage();
+            }
+     
+        }, 1000);
 };
-    
-//function to start facebook path that changes page to show facebook posts to be read
-var facebookPath = function() {
+    //upon reaching zero go to submitscore function;
+    //function to start facebook path that changes page to show facebook posts to be read
+var JokePath = function() {
+    console.log('test');
     //game elements show/other elements hide
+    $('#jokeParentEl').addClass('hide')
+    $('#gamePageParEl').removeClass('hide')
+
     //fetch facebook post loop parse and display per each question
+    var getJokeApi = function() {
+    fetch(
+        'https://official-joke-api.appspot.com/random_joke'
+      )
+        // Converts the response to JSON
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(response) {
+          // YOUR CODE HERE
+           document.getElementById('question').innerHTML = response.setup;
+           document.getElementById('answer').innerHTML =  response.punchline;
+          
+          
+          console.log(response);
+
+        });
+        document.getElementById('correctbutton').addEventListener('click', function(){
+            score++
+            getJokeApi();
+        }); 
+        document.getElementById('wrongbutton').addEventListener('click', function(){
+            getJokeApi();
+        });
+
+    }
+    getJokeApi();
+
+}   
     //local function for correct clicks log correct clicks under score change post displayed
     //local function for correct or skip clicks change post displayed
-};
+
     
 //function to start twitter path
 var twitterPath = function() {
@@ -55,4 +123,6 @@ var backToStart = function() {
 }
 
 //startGame button event listener
+
+$('#begin-btn').on('click',startGame)
 //highscore button event listener

@@ -132,20 +132,35 @@ document.getElementById('wrongbutton').addEventListener('click', function(){
 
 var displayScore = function() {
     $('#gamePageParEl').addClass('hide')
-    $('#timesUpEls').removeClass('hide')  
+    $('#timesUpEls').removeClass('hide')
+    var inputSubmit =document.getElementById('highScoreSubmit');
+    document.getElementById('finalScoreDisplay').textContent =  "Your Final Score is: " + score ;
+    
+    $('#submitScoreBtn').on('click',function(event) {
+        event.preventDefault();
+        var name = inputSubmit.value;
+        console.log(name);
+        console.log(score);
+        RMLGameScoreObj = {
+            name: name,
+            value: score
+        }    
+    })
 };
 
-// create object ot of new score to be saved in saveScores function
- 
-
-//function to input your name and submit highscore
 var submitScore = function() {
     //submitscore elements show/other elements hide
     //capture input initals for score
     //add global score var & name to score array
     //if array in localstorage then add onto current array object
     //if array not in localstorage then add new array object
+    
 };
+
+// create object ot of new score to be saved in saveScores function
+ 
+
+//function to input your name and submit highscore
 
 
 

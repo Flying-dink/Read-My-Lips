@@ -77,19 +77,19 @@ var getJokeApi = function() {
            document.getElementById('question').innerHTML = response.setup;
            document.getElementById('answer').innerHTML =  response.punchline;
           
-          
           console.log(response);
+        });
+}
 
-        });
-        document.getElementById('correctbutton').addEventListener('click', function(){
-            score++;
-            console.log(score);
-            getJokeApi();
-        }); 
-        document.getElementById('wrongbutton').addEventListener('click', function(){
-            getJokeApi();
-        });
-}    
+document.getElementById('correctbutton').addEventListener('click', function(){
+    score++;
+    console.log(score);
+    getJokeApi();
+}); 
+document.getElementById('wrongbutton').addEventListener('click', function(){
+    getJokeApi();
+});
+    
     
 
 var giphyPath = function() {

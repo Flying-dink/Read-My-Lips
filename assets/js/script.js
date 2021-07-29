@@ -60,8 +60,20 @@ var JokePath = function() {
     //game elements show/other elements hide
     $('#jokeParentEl').addClass('hide')
     $('#gamePageParEl').removeClass('hide')
+
+    document.getElementById('correctbutton').addEventListener('click', function(){
+        score++;
+        console.log(score);
+        getJokeApi();
+    }); 
+
+    document.getElementById('wrongbutton').addEventListener('click', function(){
+        getJokeApi();
+    }); 
+
     getJokeApi();
     timerCountdown();
+
 }
 
 //fetch facebook post loop parse and display per each question
@@ -81,14 +93,7 @@ var getJokeApi = function() {
         });
 }
 
-document.getElementById('correctbutton').addEventListener('click', function(){
-    score++;
-    console.log(score);
-    getJokeApi();
-}); 
-document.getElementById('wrongbutton').addEventListener('click', function(){
-    getJokeApi();
-});   
+  
 
 var giphyPath = function() {
     console.log('test')
@@ -96,6 +101,16 @@ var giphyPath = function() {
     $('#gamePageParEl').removeClass('hide')
     $('#answer').addClass('hide')
     $('#giphyPic').removeClass('hide')
+
+    document.getElementById('correctbutton').addEventListener('click', function(){
+        score++;
+        getGiphyApi();
+    });
+    
+    document.getElementById('wrongbutton').addEventListener('click', function(){
+        getGiphyApi();
+    }); 
+
     getGiphyApi();
     timerCountdown();
 };
@@ -118,16 +133,7 @@ var getGiphyApi = function() {
         
     document.getElementById('question').textContent = "Describe the picture!"
     })
-};
-
-document.getElementById('correctbutton').addEventListener('click', function(){
-    score++;
-    getGiphyApi();
-});
-
-document.getElementById('wrongbutton').addEventListener('click', function(){
-    getGiphyApi();
-});    
+};   
 
 
 var displayScore = function() {

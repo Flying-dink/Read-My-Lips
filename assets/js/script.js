@@ -3,7 +3,7 @@ var timerEl = document.getElementById('timerEl');
 
 //Global vars here
 var score = 0;
-var timeleft = 10;
+var timeleft = 90;
 var RMLGameScoresArr = [];
 var RMLGameScoreObj = {};
 

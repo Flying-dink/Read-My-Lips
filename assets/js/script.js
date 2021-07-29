@@ -88,9 +88,7 @@ document.getElementById('correctbutton').addEventListener('click', function(){
 }); 
 document.getElementById('wrongbutton').addEventListener('click', function(){
     getJokeApi();
-});
-    
-    
+});   
 
 var giphyPath = function() {
     console.log('test')

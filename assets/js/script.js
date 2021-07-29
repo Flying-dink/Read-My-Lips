@@ -4,6 +4,8 @@ var timerEl = document.getElementById('timerEl');
 //Global vars here
 var score = 0;
 var timeleft = 10;
+var RMLGameScoresArr = [];
+var RMLGameScoreObj = {};
 
 //function on start game clicked
 var startGame = function() {
@@ -144,41 +146,101 @@ var displayScore = function() {
         RMLGameScoreObj = {
             name: name,
             value: score
-        }    
+        }
+        saveScores();
+        displayHighScore();    
     })
 };
 
-var submitScore = function() {
-    //submitscore elements show/other elements hide
-    //capture input initals for score
-    //add global score var & name to score array
-    //if array in localstorage then add onto current array object
-    //if array not in localstorage then add new array object
-    
+var saveScores = function() {
+    var currentSavedScores = localStorage.getItem("RMLScores");
+    if (!currentSavedScores) {
+        console.log(RMLGameScoreObj);
+        RMLGameScoresArr.push(RMLGameScoreObj);
+        localStorage.setItem("RMLScores", JSON.stringify(RMLGameScoresArr));
+    } else {
+        currentSavedScores = JSON.parse(currentSavedScores);
+        currentSavedScores.push(RMLGameScoreObj);
+        localStorage.setItem("RMLScores", JSON.stringify(currentSavedScores));
+    };
 };
-
-// create object ot of new score to be saved in saveScores function
- 
-
-//function to input your name and submit highscore
-
-
-
-
 
 var displayHighScore = function() {
-    //highscore page elements show/other elements hide
-    //pull scores from localstorage
-    //order scores in highest to lowest
-    //append scores to the page
-    //back to start event listener
+    $('#timesUpEls').addClass('hide');
+    $('#mainElGroup').addClass('hide');
+    $('#highScoreElGroup').removeClass('hide');
+
+    var scoreList = document.getElementById('highScores');
+
+    //button to go back to start screen
+    $('#backToStart').on('click',reset);
+    //create score list from local storage
+    var createScoreEl = function(savedScoresObj){
+        //create li element
+        var scoreLi = document.createElement('li');
+        console.log(scoreLi)
+        scoreList.appendChild(scoreLi);
+        scoreLi.setAttribute("id", "li");
+        scoreLi.setAttribute("value", savedScoresObj.value)
+        scoreLi.classList.add("bText");
+        scoreLi.innerHTML= savedScoresObj.name + " - " + savedScoresObj.value + ".";
+    };
+
+    var savedScores = localStorage.getItem("RMLScores");
+
+    if (!savedScores) {
+        console.log("click1");
+        return false;
+    }
+    console.log("Saved tasks found!");
+    savedScores = JSON.parse(savedScores);
+    console.log(savedScores);
+
+    for (var i = 0; i < savedScores.length; i++) {
+        createScoreEl(savedScores[i]);
+    }
+    //sort list of high scores from highest to lowest
+    var sortList = function() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("highScores");
+        switching = true;
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+          // start by saying: no switching is done:
+          switching = false;
+          b = list.getElementsByTagName("li");
+          // Loop through all list-items:
+          for (i = 0; i < (b.length - 1); i++) {
+            // start by saying there should be no switching:
+            shouldSwitch = false;
+            /* check if the next item should
+            switch place with the current item: */
+            if (b[i].value < b[i + 1].value) {
+              /* if next item is alphabetically
+              lower than current item, mark as a switch
+              and break the loop: */
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /* If a switch has been marked, make the switch
+            and mark the switch as done: */
+            b[i].parentNode.insertBefore(b[i + 1], b[i]);
+            switching = true;
+          }
+        }
+    };
+    sortList();
 };
 
-var backToStart = function() {
-    //start page elements show/other elements hide
+var reset = function() {
+    location.reload();
+    return false;
 }
 
 //startGame button event listener
 
 $('#begin-btn').on('click',startGame)
-//highscore button event listener
+$('#viewHighbtn').on('click',displayHighScore)

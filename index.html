@@ -17,7 +17,7 @@
         <div id="timerEl" class="header">timer: 90</div>
     </header>
     
-    <main class="columns is-mobile main margin-fix">
+    <main id="mainElGroup"class="columns is-mobile main margin-fix">
         <div class="column"></div>
         <!--the real body-->
         <!--Front page Elements begin-->
@@ -43,6 +43,9 @@
                 </div>
                 <div class="buttonContainer margin-fix">
                     <button type="button" class="buttonClass" id="begin-btn">Click To Begin</button>
+                </div>
+                <div class="bText">
+                    <p id ="viewHighbtn" class="bText">View HighScores</p>
                 </div>
             </div>
             <!--Front page elements End-->
@@ -126,9 +129,9 @@
         <div class="column"></div>
     </main>
     <!--HighScore Elements Begin-->
-    <div class="hide">
+    <div id="highScoreElGroup"class="hide">
         <div class="has-text-weight-bold">
-            <h5 class="backToStart"> &lt; Back to Start</h3>
+            <h5 id="backToStart" class="backToStart"> &lt; Back to Start</h3>
         </div>
         <div class="has-text-centered is-size-1">
             <h6 class="highScoreTitle">High Scores</h1>
@@ -140,11 +143,7 @@
             <p>Score</p>
         </div>
         <hr>
-        <ul class="names is-size-4">
-            <li class="bText">Cat</li>
-            <li class="bText">Ralph</li>
-            <li class="bText">Antonio</li>
-            <li class="bText">Joe</li>
+        <ul id="highScores" class="names is-size-4">
         </ul>
     </div>
     <!--HighScore Elements End-->

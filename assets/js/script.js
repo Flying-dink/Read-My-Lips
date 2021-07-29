@@ -3,7 +3,7 @@ var timerEl = document.getElementById('timerEl');
 
 //Global vars here
 var score = 0;
-var timeleft = 10;
+var timeleft = 90;
 var RMLGameScoresArr = [];
 var RMLGameScoreObj = {};
 
@@ -14,7 +14,7 @@ var startGame = function() {
     score = 0 ;
     console.log(score);
     //reset time left
-    timeleft = 10;
+    timeleft = 90;
     //changes page to show choose elements for choose path and hide all others
     $('.cardContainer').removeClass('hide')
     $('#instructions').addClass('hide')

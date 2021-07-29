@@ -259,3 +259,19 @@ hr, .names {
 .hide {
   display: none !important;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .social-pic {
+    margin: auto !important;
+    width: 50% !important;
+    height: 75% !important;
+  }
+  
+  .twitter-pic {
+    margin: auto !important;
+    width: 50% !important;
+    height: 75% !important;
+  }
+
+}

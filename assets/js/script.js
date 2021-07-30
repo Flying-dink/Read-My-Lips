@@ -54,95 +54,103 @@ var timerCountdown = function() {
         }, 1000);
 };
     //upon reaching zero go to submitscore function;
-    //function to start facebook path that changes page to show facebook posts to be read
+    //function to start Jokepath that changes page to show joke posts to be read
 var JokePath = function() {
     
     //game elements show/other elements hide
     $('#jokeParentEl').addClass('hide')
     $('#gamePageParEl').removeClass('hide')
-
+    //event listener to grab click from correct button, and increase final score by one,and re-run the GetJokeApi
     document.getElementById('correctbutton').addEventListener('click', function(){
         score++;
         console.log(score);
         getJokeApi();
     }); 
-
+    //event listener to grab click from wrong button, and re-run the getJokeApi
     document.getElementById('wrongbutton').addEventListener('click', function(){
         getJokeApi();
     }); 
-
+    //calls the GetJokeApi function
     getJokeApi();
+    //calls the timerCountDown function
     timerCountdown();
 
 }
 
-//fetch facebook post loop parse and display per each question
+    //fetch joke post loop parse and display per each question
 var getJokeApi = function() {
     fetch('https://official-joke-api.appspot.com/random_joke')
       
-        // Converts the response to JSON
+    // Converts the response to JSON
         .then(function(response) {
           return response.json();
         })
         .then(function(response) {
-          // YOUR CODE HERE
+    // Takes the value of 'set up' and add that response to the question ID
            document.getElementById('question').innerHTML = response.setup;
+    // Takes the value of 'punchline' and add that response to the answer ID
            document.getElementById('answer').innerHTML =  response.punchline;
           
           console.log(response);
         });
 }
 
-  
-
-var giphyPath = function() {
+    //function to start giphyPath that changes page to new giphy 
+    var giphyPath = function() {
     console.log('test')
+    //game elements show/other elements hide
     $('#jokeParentEl').addClass('hide')
     $('#gamePageParEl').removeClass('hide')
     $('#answer').addClass('hide')
     $('#giphyPic').removeClass('hide')
-
+    //event listener to grab click from correct button, and increase final score by one, and re-run the GetGiphyApi
     document.getElementById('correctbutton').addEventListener('click', function(){
         score++;
         getGiphyApi();
     });
-    
+    //event listener to grab click from wrong button, and re-run the getGiphyApi
     document.getElementById('wrongbutton').addEventListener('click', function(){
         getGiphyApi();
     }); 
-
+    //calls the GetGiphyApi function
     getGiphyApi();
+    //calls the timerCountDown function
     timerCountdown();
 };
-
+    //fetch giphy loop parse and display per each question
 var getGiphyApi = function() {
     console.log(score);
     fetch('https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN')
+    
     // Converts the response to JSON
-
     .then(function(response) {
     return response.json();
     })
     .then(function(response) {
-
-    var myImage = document.getElementById('giphyPic');
+    //attach the response to the giphyPic ID
+var myImage = document.getElementById('giphyPic');
     console.log(response);
         console.log(myImage.src)
         console.log(response.data.image_url)
         $('#giphyPic').attr("src",response.data.image_url);
-        
+            
+    // change the text of the question ID
     document.getElementById('question').textContent = "Describe the picture!"
     })
 };   
 
-
+    // Function to display score
 var displayScore = function() {
+     //game elements show/other elements hide
     $('#gamePageParEl').addClass('hide')
     $('#timesUpEls').removeClass('hide')
+    //variable to hold the ID 'highScoreSubmit'
     var inputSubmit =document.getElementById('highScoreSubmit');
+    //grab the finalScoreDisplay ID and set its content
     document.getElementById('finalScoreDisplay').textContent =  "Your Final Score is: " + score ;
-    
+    // event handler to grab click, before displaying final score
     $('#submitScoreBtn').on('click',function(event) {
+    // prevents the browser from refreshing after each click
         event.preventDefault();
         var name = inputSubmit.value;
         console.log(name);
@@ -151,39 +159,53 @@ var displayScore = function() {
             name: name,
             value: score
         }
+        // call the saveScore function
         saveScores();
+        // call the DisplayHighScore function
         displayHighScore();    
     })
 };
-
+    
+        // Function to save score
 var saveScores = function() {
+        //variable to hold score from local storage
     var currentSavedScores = localStorage.getItem("RMLScores");
+        //if statement checks if currentSavedScores has a null value
     if (!currentSavedScores) {
         console.log(RMLGameScoreObj);
-        RMLGameScoresArr.push(RMLGameScoreObj);
-        localStorage.setItem("RMLScores", JSON.stringify(RMLGameScoresArr));
+        // Adds "RMLGameScoreObj"
+        RMLGameScoresArr.push(RMLGameScoreObj); 
+        //converts a object or value to JSON string
+        localStorage.setItem("RMLScores", JSON.stringify(RMLGameScoresArr)); 
+        
+        //parses JSON string
     } else {
         currentSavedScores = JSON.parse(currentSavedScores);
+        // Adds "RMLGameScoreObj"
         currentSavedScores.push(RMLGameScoreObj);
+        //converts a object or value to JSON string
         localStorage.setItem("RMLScores", JSON.stringify(currentSavedScores));
     };
 };
-
+        // Function to display high score
 var displayHighScore = function() {
+        //game elements show/other elements hide
     $('#timesUpEls').addClass('hide');
     $('#mainElGroup').addClass('hide');
     $('#highScoreElGroup').removeClass('hide');
-
+        //variable to grab highscore ID
     var scoreList = document.getElementById('highScores');
 
-    //button to go back to start screen
+        //button to go back to start screen
     $('#backToStart').on('click',reset);
-    //create score list from local storage
+        //create score list from local storage
     var createScoreEl = function(savedScoresObj){
-        //create li element
+        //create li element and set it to ScoreLi variable
         var scoreLi = document.createElement('li');
         console.log(scoreLi)
+        //attach ScoreLi variable to list
         scoreList.appendChild(scoreLi);
+        //set the Li element attribute
         scoreLi.setAttribute("id", "li");
         scoreLi.setAttribute("value", savedScoresObj.value)
         scoreLi.classList.add("bText");

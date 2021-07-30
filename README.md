@@ -1,19 +1,20 @@
 # Read-My-Lips
-
+Read My lips is an online game for friends and Family which allows a player to guess what a person is whispering
 ## Purpose
-A simple calendar application that allows a user to save events for each hour of the day.
+To entertain and keep boredom away 
 
 ## Built With
-* HTML
+* HTML  * 2 APIs(Giphy and Jokes)
 * CSS
 * JS
-
-
+* Bulma
+* Figma
+* J Query
 ## Website
-
+ https://flying-dink.github.io/Read-My-Lips/
 
 ## Screenshot
-![Screenshot](./assets/screenshots/)
+  Assets\Images\2021-07-29 (2).png      
 
 ## Contribution
 Made by Flying-Dink a.k.a. Catherine Clifford , NukaGrizz aka.Joe Tremols, TonyCloud aka Antonio, rppierr33 aka Ralph Pierre

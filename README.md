@@ -10,11 +10,12 @@ To entertain and keep boredom away
 * Bulma
 * Figma
 * J Query
+
 ## Website
  https://flying-dink.github.io/Read-My-Lips/
 
-## Screenshot
-  Assets\Images\2021-07-29 (2).png      
+## Screenshot   
+![Screenshot](./assets/images/screenshot.png)
 
 ## Contribution
 Made by Flying-Dink a.k.a. Catherine Clifford , NukaGrizz aka.Joe Tremols, TonyCloud aka Antonio, rppierr33 aka Ralph Pierre

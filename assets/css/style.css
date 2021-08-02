@@ -1,3 +1,5 @@
+
+/* root of colors scheme */
 :root {
   --primary-blue: rgba(23, 120, 245, 1);
   --primary-blue2: rgba(23, 120, 245, .75);
@@ -6,6 +8,7 @@
   --white: #FFFFFF;
 }
 
+/* screen box size for website */
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -17,6 +20,10 @@
   margin: 0px;
 }
 
+
+/* front page starts here */
+
+/* header for centering text, size and color */
 .header {
   text-align: center;
   font-size: xx-large;
@@ -32,11 +39,14 @@
   align-self: center;
 }
 
+/* color scheme and border-radio */
+
 .first-page-el-style {
   background-color: var(--primary-blue);
   border-radius: 50px;
 }
 
+/* front page to align and center content */
 .title-container {
   justify-content: center;
   align-items: center;
@@ -46,11 +56,13 @@
   margin-bottom: 20px;
 }
 
+/* universal scheme for front and gamepage */
 .titles {
   font-size: 5vw;
   color: var(--white);
 }
 
+/* texts style for front page paragraph */
 .rules {
   width: 95%;
   margin: auto;
@@ -58,10 +70,12 @@
   font-size: 3vw;
 }
 
+/* background white */
 .white {
   background-color: #FFFFFF;
 }
 
+/* style for buttons */
 .buttonClass {
   border-radius: 50px;
   background-color: var(--primary-blue);
@@ -69,9 +83,12 @@
   font-size: 3vw;
 }
 
+/* button hover */
 .buttonClass:hover {
   background-color: var(--primary-blue2)
 }
+
+/* front page ends here */
 
 /* Times Up css Begin*/
 .timesUp {
@@ -108,19 +125,25 @@
 }
 /* game-page styles end */
 
+
+
 /* choose styles begin*/
+
+/* getjoke api pic */
 .social-pic {
   margin: auto !important;
   width: 35% !important;
   height: 77% !important;
 }
 
+/* giphy pic */
 .twitter-pic {
   margin: auto !important;
   width: 37% !important;
   height: 72% !important;
 }
 
+/* text center */
 .center-text {
   text-align: center !important;
   padding-top: 20px;
@@ -136,7 +159,7 @@
 }
 
 
-
+/* text style for the game selection  */
 .tile-margin {
   margin: 6% !important
 }
@@ -196,7 +219,10 @@
   background-color: rgba(29, 155, 240, 1)!important;
   margin-left: 20px;
 }
+/* text style for the game selection  */
 /* choose styles end */
+
+
 
 /* highscore styles start */
 .backToStart {
@@ -256,12 +282,18 @@ hr, .names {
 /* highscore styles end */
 
 
+
+
 .hide {
   display: none !important;
 }
 
 
-@media only screen and (max-width: 600px) {
+/* mobile responseive queries */
+
+
+/* mobile queries for screen sizies for 900px */
+@media only screen and (min-width: 878px) {
   .social-pic {
     margin: auto !important;
     width: 50% !important;
@@ -274,4 +306,83 @@ hr, .names {
     height: 75% !important;
   }
 
+  .header {
+    text-align: center;
+    font-size:2vw;
+    margin: 1% 0;
+    background-color: var(--white);
+    color: black;
+  }
+  
+  .main {
+    margin: 1% 0;
+    width: 50%;
+    min-width: 100px;
+    align-self: center;
+  }
+
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 968px) {
+.social-pic {
+  margin: auto !important;
+  width: 50% !important;
+  height: 75% !important;
+}
+
+.twitter-pic {
+  margin: auto !important;
+  width: 50% !important;
+  height: 75% !important;
+}
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1% 0;
+  background-color: var(--white);
+  color: black;
+}
+
+.main {
+  margin: 1% 0;
+  width: 100%;
+  min-width: 100px;
+  align-self: center;
+}
+
+
+/* mobile queries for screen sizies for 600px */
+@media only screen and (max-width: 600px) {
+  .social-pic {
+    margin: auto !important;
+    width: 50% !important;
+    height: 75% !important;
+  }
+
+
+}
+  
+  .twitter-pic {
+    margin: auto !important;
+    width: 50% !important;
+    height: 75% !important;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1% 0;
+    background-color: var(--white);
+    color: black;
+  }
+  
+  .main {
+    margin: 1% 0;
+    width: 100%;
+    min-width: 100px;
+    align-self: center;
+  }
+
+  }

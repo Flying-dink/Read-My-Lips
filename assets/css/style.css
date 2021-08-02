@@ -82,6 +82,7 @@
   background-color: var(--primary-blue);
   padding: 10px 30px;
   font-size: 3vw;
+  margin: 10px;
 }
 
 /* button hover */

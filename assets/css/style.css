@@ -20,10 +20,10 @@
   margin: 0px;
 }
 
-
 /* front page starts here */
 
 /* header for centering text, size and color */
+
 .header {
   text-align: center;
   font-size: xx-large;
@@ -35,7 +35,7 @@
 .main {
   margin: 1% 0;
   width: 100%;
-  min-width: 200px;
+  min-width: 000px;
   align-self: center;
 }
 
@@ -54,6 +54,7 @@
   min-width: 450px;
   text-align: center;
   margin-bottom: 20px;
+  padding: 5px;
 }
 
 /* universal scheme for front and gamepage */
@@ -67,7 +68,7 @@
   width: 95%;
   margin: auto;
   padding: 5px;
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 
 /* background white */
@@ -81,6 +82,7 @@
   background-color: var(--primary-blue);
   padding: 10px 30px;
   font-size: 3vw;
+  margin: 10px;
 }
 
 /* button hover */
@@ -92,18 +94,18 @@
 
 /* Times Up css Begin*/
 .timesUp {
+  font-size: 3vw;
   color: rgba(23, 120, 245, 1);
 }
 
-.btn {
-   background-color:rgba(23, 120, 245, 1);
+.btn:hover{
+  background-color: rgba(23, 120, 245, .5);
 }
 /* Times up css end*/
 
 /* game-page styles begin */
-
 .psps {
-    text-align: center;
+  text-align: center;
 }
 
 .box {
@@ -121,11 +123,9 @@
 }
 
 .button:hover {
-    background-color: rgba(23, 120, 245, 1);
+  background-color: rgba(23, 120, 245, 1);
 }
 /* game-page styles end */
-
-
 
 /* choose styles begin*/
 
@@ -148,6 +148,7 @@
   text-align: center !important;
   padding-top: 20px;
   color: white;
+  font-size: 2.3vw;
 }
 
 .hover {
@@ -158,11 +159,7 @@
   transform: scale(1.05);
 }
 
-
 /* text style for the game selection  */
-.tile-margin {
-  margin: 6% !important
-}
 
 .block {
   display: block !important;
@@ -174,7 +171,7 @@
 
 .top-container {
   height:500px !important;
-   width: 43%!important
+  width: 43%!important
 }
 
 .circle {
@@ -185,19 +182,6 @@
   -webkit-border-radius: 50%;
   width: 80px;
   position: relative;
-}
-
-.cardContainer {
-  height: 500px !important;
-  margin: 6% !important;
-}
-
-.tile {
-  border-radius: 10%;
-}
-
-.tile1 {
-  background-color: rgba(23, 120, 245, 1);
 }
 
 .img {
@@ -212,17 +196,16 @@
 
 .newcolor {
   background-color: rgba(24, 119, 242, 1)!important;
-  margin-right: 20px;
+  border-radius: 25px;
+  margin: 10px;
 }
 
 .newcolor2 {
   background-color: rgba(29, 155, 240, 1)!important;
-  margin-left: 20px;
+  border-radius: 25px;
+  margin: 10px;
 }
-/* text style for the game selection  */
 /* choose styles end */
-
-
 
 /* highscore styles start */
 .backToStart {
@@ -245,7 +228,6 @@ hr, .names {
 .scorebox {
   color: rgba(23, 120, 245, 1);
   position: absolute;
-  
   right:80% ;
   left:20%;
 }
@@ -281,108 +263,80 @@ hr, .names {
 
 /* highscore styles end */
 
-
-
-
 .hide {
   display: none !important;
 }
 
-
 /* mobile responseive queries */
 
-
 /* mobile queries for screen sizies for 900px */
-@media only screen and (min-width: 878px) {
-  .social-pic {
-    margin: auto !important;
-    width: 50% !important;
-    height: 75% !important;
-  }
-  
-  .twitter-pic {
-    margin: auto !important;
-    width: 50% !important;
-    height: 75% !important;
-  }
+@media only screen and (max-width: 900px) {
 
   .header {
-    text-align: center;
-    font-size:2vw;
-    margin: 1% 0;
-    background-color: var(--white);
-    color: black;
-  }
-  
-  .main {
-    margin: 1% 0;
-    width: 50%;
-    min-width: 100px;
-    align-self: center;
+    font-size: 6vw;
   }
 
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 968px) {
-.social-pic {
-  margin: auto !important;
-  width: 50% !important;
-  height: 75% !important;
-}
-
-.twitter-pic {
-  margin: auto !important;
-  width: 50% !important;
-  height: 75% !important;
-}
-
-.header {
-  text-align: center;
-  font-size: 2rem;
-  margin: 1% 0;
-  background-color: var(--white);
-  color: black;
-}
-
-.main {
-  margin: 1% 0;
-  width: 100%;
-  min-width: 100px;
-  align-self: center;
-}
-
-
-/* mobile queries for screen sizies for 600px */
-@media only screen and (max-width: 600px) {
-  .social-pic {
-    margin: auto !important;
-    width: 50% !important;
-    height: 75% !important;
+  .titles {
+    font-size: 5vw;
   }
 
-
-}
-  
-  .twitter-pic {
-    margin: auto !important;
-    width: 50% !important;
-    height: 75% !important;
+  .rules {
+    font-size: 3.5vw;
   }
+
+  .timesUp {
+    font-size: 5vw;
+  }
+
+  .bText {
+    font-size: 3.5vw;
+  }
+
+  .viewhightext {
+    font-size: 3.5vw;
+  }
+
+  .buttonClass {
+    font-size: 4vw;
+  }
+
+  .center-text {
+    font-size: 4vw;
+  }
+}
+
+/* mobile queries for screen sizies for 450px */
+@media only screen and (max-width: 500px) {
 
   .header {
-    text-align: center;
-    font-size: 2rem;
-    margin: 1% 0;
-    background-color: var(--white);
-    color: black;
-  }
-  
-  .main {
-    margin: 1% 0;
-    width: 100%;
-    min-width: 100px;
-    align-self: center;
+    font-size: 5vw;
   }
 
+  .titles {
+    font-size: 7vw;
   }
+
+  .rules {
+    font-size: 5vw;
+  }
+
+  .timesUp {
+    font-size: 7vw;
+  }
+
+  .bText {
+    font-size: 5vw;
+  }
+
+  .viewhightext {
+    font-size: 5vw;
+  }
+
+  .buttonClass {
+    font-size: 6vw;
+  }
+
+  .center-text {
+    font-size: 5vw;
+  }
+}  

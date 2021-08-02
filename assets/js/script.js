@@ -53,13 +53,14 @@ var timerCountdown = function() {
      
         }, 1000);
 };
-    //upon reaching zero go to submitscore function;
-    //function to start Jokepath that changes page to show joke posts to be read
+
+//function to start Jokepath that changes page to show joke posts to be read
 var JokePath = function() {
     
     //game elements show/other elements hide
     $('#jokeParentEl').addClass('hide')
     $('#gamePageParEl').removeClass('hide')
+    timerEl.classList.remove("hide")
     //event listener to grab click from correct button, and increase final score by one,and re-run the GetJokeApi
     document.getElementById('correctbutton').addEventListener('click', function(){
         score++;
@@ -74,10 +75,9 @@ var JokePath = function() {
     getJokeApi();
     //calls the timerCountDown function
     timerCountdown();
+};
 
-}
-
-    //fetch joke post loop parse and display per each question
+//fetch joke post loop parse and display per each question
 var getJokeApi = function() {
     fetch('https://official-joke-api.appspot.com/random_joke')
       
@@ -93,16 +93,17 @@ var getJokeApi = function() {
           
           console.log(response);
         });
-}
+};
 
-    //function to start giphyPath that changes page to new giphy 
-    var giphyPath = function() {
+//function to start giphyPath that changes page to new giphy 
+var giphyPath = function() {
     console.log('test')
     //game elements show/other elements hide
     $('#jokeParentEl').addClass('hide')
     $('#gamePageParEl').removeClass('hide')
     $('#answer').addClass('hide')
     $('#giphyPic').removeClass('hide')
+    timerEl.classList.remove("hide")
     //event listener to grab click from correct button, and increase final score by one, and re-run the GetGiphyApi
     document.getElementById('correctbutton').addEventListener('click', function(){
         score++;
@@ -117,7 +118,8 @@ var getJokeApi = function() {
     //calls the timerCountDown function
     timerCountdown();
 };
-    //fetch giphy loop parse and display per each question
+
+//fetch giphy loop parse and display per each question
 var getGiphyApi = function() {
     console.log(score);
     fetch('https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN')
@@ -128,7 +130,7 @@ var getGiphyApi = function() {
     })
     .then(function(response) {
     //attach the response to the giphyPic ID
-var myImage = document.getElementById('giphyPic');
+    var myImage = document.getElementById('giphyPic');
     console.log(response);
         console.log(myImage.src)
         console.log(response.data.image_url)
@@ -139,11 +141,12 @@ var myImage = document.getElementById('giphyPic');
     })
 };   
 
-    // Function to display score
+// Function to display score
 var displayScore = function() {
      //game elements show/other elements hide
     $('#gamePageParEl').addClass('hide')
     $('#timesUpEls').removeClass('hide')
+    timerEl.classList.add("hide")
     //variable to hold the ID 'highScoreSubmit'
     var inputSubmit =document.getElementById('highScoreSubmit');
     //grab the finalScoreDisplay ID and set its content
@@ -166,7 +169,7 @@ var displayScore = function() {
     })
 };
     
-        // Function to save score
+// Function to save score
 var saveScores = function() {
         //variable to hold score from local storage
     var currentSavedScores = localStorage.getItem("RMLScores");
@@ -187,18 +190,19 @@ var saveScores = function() {
         localStorage.setItem("RMLScores", JSON.stringify(currentSavedScores));
     };
 };
-        // Function to display high score
+
+// Function to display high score
 var displayHighScore = function() {
-        //game elements show/other elements hide
+    //game elements show/other elements hide
     $('#timesUpEls').addClass('hide');
     $('#mainElGroup').addClass('hide');
     $('#highScoreElGroup').removeClass('hide');
-        //variable to grab highscore ID
+    //variable to grab highscore ID
     var scoreList = document.getElementById('highScores');
 
-        //button to go back to start screen
+    //button to go back to start screen
     $('#backToStart').on('click',reset);
-        //create score list from local storage
+    //create score list from local storage
     var createScoreEl = function(savedScoresObj){
         //create li element and set it to ScoreLi variable
         var scoreLi = document.createElement('li');
@@ -209,11 +213,11 @@ var displayHighScore = function() {
         scoreLi.setAttribute("id", "li");
         scoreLi.setAttribute("value", savedScoresObj.value)
         scoreLi.classList.add("bText");
-        scoreLi.innerHTML= savedScoresObj.name + " - " + savedScoresObj.value + ".";
+        scoreLi.innerHTML= savedScoresObj.value + " --- " + savedScoresObj.name + ".";
     };
-
+    //get saved scores from local storage
     var savedScores = localStorage.getItem("RMLScores");
-
+    //if no saved scores in local storage skip
     if (!savedScores) {
         console.log("click1");
         return false;
@@ -266,7 +270,7 @@ var reset = function() {
     return false;
 }
 
-//startGame button event listener
-
+//StartGame button event listener
 $('#begin-btn').on('click',startGame)
+//View highscore event listener
 $('#viewHighbtn').on('click',displayHighScore)

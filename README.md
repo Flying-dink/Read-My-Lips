@@ -1,5 +1,5 @@
 # Read-My-Lips
-Read My lips is an online game for friends and Family which allows a player to guess what a person is whispering
+Read My lips is an online multiplayer game that test players ability to read each other's lips by providing random content for players to mouth out.  
 
 ## Purpose
 To entertain and keep boredom away 

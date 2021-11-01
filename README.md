@@ -1,5 +1,5 @@
 # Read-My-Lips
-Read My lips is an online game for friends and Family which allows a player to guess what a person is whispering
+Read My lips is an online multiplayer game that test players ability to read each other's lips by providing random content fot players to mouth out. 
 ## Purpose
 To entertain and keep boredom away 
 
@@ -14,7 +14,7 @@ To entertain and keep boredom away
  https://flying-dink.github.io/Read-My-Lips/
 
 ## Screenshot
-  Assets\Images\2021-07-29 (2).png      
+  Assets\Images\2021-07-29 (2).png    
 
 ## Contribution
-Made by Flying-Dink a.k.a. Catherine Clifford , NukaGrizz aka.Joe Tremols, TonyCloud aka Antonio, rppierr33 aka Ralph Pierre
+Made by Flying-Dink a.k.a. Catherine Clifford , NukaGrizz aka.Joe Tremols, TonyCloud aka Antonio, rppierr33 aka Ralph PierreC 

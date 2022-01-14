@@ -9,10 +9,10 @@ var RMLGameScoreObj = {};
 
 //function on start game clicked
 var startGame = function() {
-    console.log('shit');
+    // console.log('shit');
     //reset score to zero
     score = 0 ;
-    console.log(score);
+    // console.log(score);
     //reset time left
     timeleft = 90;
     //changes page to show choose elements for choose path and hide all others
@@ -30,7 +30,7 @@ var timerCountdown = function() {
         //use the 'setInterval()' to call a function to be executed every 1000 milliseconds
         var timeInterval = setInterval(function() {
      
-         console.log(timeleft)
+        //  console.log(timeleft)
             //As long as the 'timeleft' is greater than 1
             if (timeleft > 1) {
                 //Set the 'textContent' of the 'timerEl' to show the remaining seconds
@@ -64,7 +64,7 @@ var JokePath = function() {
     //event listener to grab click from correct button, and increase final score by one,and re-run the GetJokeApi
     document.getElementById('correctbutton').addEventListener('click', function(){
         score++;
-        console.log(score);
+        // console.log(score);
         getJokeApi();
     }); 
     //event listener to grab click from wrong button, and re-run the getJokeApi
@@ -78,25 +78,35 @@ var JokePath = function() {
 };
 
 //fetch joke post loop parse and display per each question
-var getJokeApi = function() {
-    fetch('https://official-joke-api.appspot.com/random_joke')
-      
-    // Converts the response to JSON
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(response) {
-    // Takes the value of 'set up' and add that response to the question ID
-           document.getElementById('question').innerHTML = response.setup;
-    // Takes the value of 'punchline' and add that response to the answer ID
-           document.getElementById('answer').innerHTML =  response.punchline;
-          
-          console.log(response);
-        });
-};
+async function getJokeApi() {
+    const jokeData = await fetch("https://icanhazdadjoke.com/", {
+        headers: {
+          Accept: "application/json"
+        }
+      });
+      const jokeObj = await jokeData.json();
+  
+//  Takes the value of 'set up' and add that response to the question ID
+      document.getElementById('question').innerHTML = jokeObj;
+//   Takes the value of 'punchline' and add that response to the answer ID
+         document.getElementById('answer').innerHTML =  jokeObj;
+       console.log(jokeObj);
+}
+
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
 
 //function to start giphyPath that changes page to new giphy 
-var giphyPath = function() {
+function giphyPath() {
     console.log('test')
     //game elements show/other elements hide
     $('#jokeParentEl').addClass('hide')
@@ -105,41 +115,108 @@ var giphyPath = function() {
     $('#giphyPic').removeClass('hide')
     timerEl.classList.remove("hide")
     //event listener to grab click from correct button, and increase final score by one, and re-run the GetGiphyApi
-    document.getElementById('correctbutton').addEventListener('click', function(){
-        score++;
-        getGiphyApi();
-    });
-    //event listener to grab click from wrong button, and re-run the getGiphyApi
-    document.getElementById('wrongbutton').addEventListener('click', function(){
-        getGiphyApi();
-    }); 
     //calls the GetGiphyApi function
     getGiphyApi();
     //calls the timerCountDown function
     timerCountdown();
 };
 
+document.getElementById('correctbutton').addEventListener('click', function(){
+    score++;
+    getGiphyApi();;
+});
+//event listener to grab click from wrong button, and re-run the getGiphyApi
+document.getElementById('wrongbutton').addEventListener('click', function(){
+            getGiphyApi();
+}); 
+
 //fetch giphy loop parse and display per each question
+let fig = document.getElementById("gamePageParEl");
+let img = document.createElement("img");
+let fc = document.createElement("figcaption");
+let APIKEY = "HvaacROi9w5oQCDYHSIk42eiDSIXH3FN";
+let animals = ["cat", "dog", "tiger", "monkey", "lyon", "hyena", "lizard", "cow", "pig", "fox", "snake", "frog"];
+
+
+
+
+
+var randomName = Math.floor(Math.random() * animals.length);
+
+var rand_val = animals[randomName];
+
+
 var getGiphyApi = function() {
-    console.log(score);
-    fetch('https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN')
+
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=`;
     
-    // Converts the response to JSON
-    .then(function(response) {
-    return response.json();
+    // let str = "rand";
+    url = url.concat(rand_val);
+    console.log(url);
+    fetch(url)
+    .then(response => response.json())
+    .then(content => {
+      //  data, pagination, meta
+      for(let i = 0; i < content.data.length; i++){
+        console.log(animals[i]);
+    }
+      console.log(content.data);
+      console.log("META", content.meta);
+      img.src = content.data[0].images.downsized.url;
+      img.alt = content.data[0].title;
+      fc.textContent = content.data[0].title;
+      fig.appendChild(img);
+      fig.appendChild(fc);
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // var gif = result.data[0].data.images.looping.mp4;
+        // var myImage = document.createElement("img");  
+        // myImage.src = 'https://giphy.com/embed/g7UcX2zdzxkVIQ7qAF';              
+        // var giphyPic = document.getElementById("giphyImage");
+        // giphyPic.appendChild(myImage);
+        // myImage.appendChild(gif);
+        // .src = response.data[0].images.downsized.url;
+        // giphyPic.src = result.message;
+        // giphyPic.alt = response.data[0]
     })
-    .then(function(response) {
-    //attach the response to the giphyPic ID
-    var myImage = document.getElementById('giphyPic');
-    console.log(response);
-        console.log(myImage.src)
-        console.log(response.data.image_url)
-        $('#giphyPic').attr("src",response.data.image_url);
+    .catch(err => console.log(err))
+    
+
+}
+    // return response.json();
+    // })
+    // .then(function(response) {
+    // attach the response to the giphyPic ID
+    //  var myImage = document.getElementById('giphyPic');
+    // console.log(response.data);
+    //  $('#giphyPic').attr("src", response.data[0].images.url);
+
+    // var myGiphyPic = document.getElementById('giphyPic');
+    //  console.log(response);
+        // var myImage = document.createElement('img')
+    //     myImage.src = response.data[0].images.downsized.url
+        // myImage.alt = response.data[0]
+    //     myGiphyPic.appendChild(myImage);
+        // $('#giphyPic').attr("src", response.data[0].images.downsized.url);
+            
             
     // change the text of the question ID
-    document.getElementById('question').textContent = "Describe the picture!"
-    })
-};   
+    // document.getElementById('question').textContent = "Describe the picture!"
+    
+
+
 
 // Function to display score
 var displayScore = function() {

@@ -157,66 +157,21 @@ var getGiphyApi = function() {
     .then(response => response.json())
     .then(content => {
       //  data, pagination, meta
-      for(let i = 0; i < content.data.length; i++){
-        console.log(animals[i]);
-    }
       console.log(content.data);
       console.log("META", content.meta);
       img.src = content.data[0].images.downsized.url;
       img.alt = content.data[0].title;
       fc.textContent = content.data[0].title;
-      fig.appendChild(img);
+      console.log(fc);
       fig.appendChild(fc);
+      fig.appendChild(img);
       
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // var gif = result.data[0].data.images.looping.mp4;
-        // var myImage = document.createElement("img");  
-        // myImage.src = 'https://giphy.com/embed/g7UcX2zdzxkVIQ7qAF';              
-        // var giphyPic = document.getElementById("giphyImage");
-        // giphyPic.appendChild(myImage);
-        // myImage.appendChild(gif);
-        // .src = response.data[0].images.downsized.url;
-        // giphyPic.src = result.message;
-        // giphyPic.alt = response.data[0]
+      
     })
     .catch(err => console.log(err))
     
 
 }
-    // return response.json();
-    // })
-    // .then(function(response) {
-    // attach the response to the giphyPic ID
-    //  var myImage = document.getElementById('giphyPic');
-    // console.log(response.data);
-    //  $('#giphyPic').attr("src", response.data[0].images.url);
-
-    // var myGiphyPic = document.getElementById('giphyPic');
-    //  console.log(response);
-        // var myImage = document.createElement('img')
-    //     myImage.src = response.data[0].images.downsized.url
-        // myImage.alt = response.data[0]
-    //     myGiphyPic.appendChild(myImage);
-        // $('#giphyPic').attr("src", response.data[0].images.downsized.url);
-            
-            
-    // change the text of the question ID
-    // document.getElementById('question').textContent = "Describe the picture!"
-    
-
-
 
 // Function to display score
 var displayScore = function() {
